@@ -16,7 +16,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    background-color: #333;
+    background-color: #000;
     z-index: 10;
 }
 
@@ -45,12 +45,17 @@ nav .nav-links li a {
     font-size: 1rem;
 }
 
-/* Hero Section */
+/* Hero Section with Background */
 #hero {
-    background-color: #333;
+    background: linear-gradient(135deg, #ffcc00, #333);
     color: #fff;
     text-align: center;
     padding: 100px 20px;
+    background-size: cover;
+}
+
+.hero-background {
+    background-image: url('path-to-your-image.jpg'); /* Replace with your own image */
 }
 
 #hero h1 {
@@ -60,6 +65,11 @@ nav .nav-links li a {
 
 #hero p {
     font-size: 1.2rem;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Career Section */
@@ -125,7 +135,7 @@ nav .nav-links li a {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: #00aaff;
+    color: #ffcc00;
 }
 
 /* Footer */
@@ -150,18 +160,36 @@ footer .social-links li a {
 
 /* Call to Action Button */
 .cta-button {
-    background-color: #ffcc00; /* Yellow */
+    background-color: white;
     color: black;
     padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none;
+    border: 2px solid black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #e6b800;
+    background-color: #ffcc00;
+    color: black;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+/* Scroll Animations */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
 }
+
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Scroll when element enters the viewport */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
