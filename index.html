@@ -1,12 +1,76 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Career Path</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Xin chào!</h1>
-  <p>Đây là trang portfolio của tôi.</p>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#career">Career Path</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>Welcome to My Career Path</h1>
+    <p>Discover my journey, projects, and professional experiences.</p>
+    <a href="#career" class="btn">Explore</a>
+  </section>
+
+  <!-- Career Path Section -->
+  <section id="career" class="slide-in">
+    <h2>My Career Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Software Engineer</h3>
+        <p>Company XYZ | 2022 - Present</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Junior Developer</h3>
+        <p>Company ABC | 2020 - 2022</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Intern</h3>
+        <p>Company DEF | 2019 - 2020</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="slide-in">
+    <h2>Featured Projects</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A description of the project goes here.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>A description of the project goes here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
