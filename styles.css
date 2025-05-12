@@ -1,0 +1,154 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light Gray background */
+}
+
+/* Navbar */
+nav {
+  background: #003366; /* Dark Blue */
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: #00aaff; /* Sky Blue */
+}
+
+#hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #fff;
+}
+
+#hero .btn {
+  padding: 10px 20px;
+  background: #003366; /* Dark Blue */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Career Path Section */
+#career {
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-item {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.timeline-item h3 {
+  font-size: 1.5rem;
+  color: #003366; /* Dark Blue */
+}
+
+.timeline-item p {
+  color: #666;
+}
+
+/* Projects Section */
+#projects {
+  padding: 50px 20px;
+  background: #e2e2e2; /* Light Gray */
+}
+
+.project-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 45%;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #003366; /* Dark Blue */
+}
+
+.project-card p {
+  color: #666;
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  background: #fff;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact button {
+  padding: 10px;
+  background: #00aaff; /* Sky Blue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Slide-in Effect */
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
