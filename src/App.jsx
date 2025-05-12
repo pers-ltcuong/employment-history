@@ -14,13 +14,13 @@ function App() {
   const sectionIds = ["hero", "about", "education", "projects", "experience", "contact"];
 
   const backgroundImages = [
-    "url('/images/bg1.jpg')",
-    "url('/images/bg2.jpg')",
-    "url('/images/bg3.jpg')",
-    "url('/images/bg4.jpg')",
-    "url('/images/bg5.jpg')",
-    "url('/images/bg6.jpg')"
-  ];
+  `url(${process.env.PUBLIC_URL}/images/bg1.jpg)`,
+  `url(${process.env.PUBLIC_URL}/images/bg2.jpg)`,
+  `url(${process.env.PUBLIC_URL}/images/bg3.jpg)`,
+  `url(${process.env.PUBLIC_URL}/images/bg4.jpg)`,
+  `url(${process.env.PUBLIC_URL}/images/bg5.jpg)`,
+  `url(${process.env.PUBLIC_URL}/images/bg6.jpg)`
+];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
