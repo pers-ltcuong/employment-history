@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
@@ -8,6 +9,7 @@ import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
+import ProfileModal from './components/ProfileModal';
 
 function App() {
   const sections = [Hero, About, Education, Projects, Experience, Contact];
@@ -46,6 +48,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <ProfileModal hidden/> {/* Modal trigger button */}
 
       {/* Background Layers */}
       <div className="background-container">
