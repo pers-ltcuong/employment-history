@@ -67,12 +67,15 @@ function App() {
         if (index === 0) alignmentClass = "section-center";
         else if (index % 2 === 1) alignmentClass = "section-left";
         else alignmentClass = "section-right";
+        
+        let defaultBackground = ""
+        if (sectionIds[index] === "contact") defaultBackground = "default-background"
 
         return (
           <section
             key={sectionIds[index]}
             id={sectionIds[index]}
-            className={`section ${alignmentClass}`}
+            className={`section ${alignmentClass} ${defaultBackground}`}
           >
             <div className="section-content">
               <Component />
