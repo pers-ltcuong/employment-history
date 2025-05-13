@@ -67,15 +67,19 @@ html, body {
   text-align: center;
   padding: 150px;
 }
+
 .section-left {
   justify-content: flex-start;
   text-align: left!important;
   padding-left: 5%;
+  padding-right: 50%;
 }
+
 .section-right {
   justify-content: flex-end;
   text-align: right!important;
   padding-right: 5%;
+  padding-left: 50%;
 }
 
 .default-background {
@@ -114,12 +118,14 @@ html, body {
 
 .custom-btn-white-bg:hover {
   background-color: #FFD700;
+  border: 2px solid #FFD700;
 }
 
 /* Content */
-h2 {
+section h2 {
   font-family: 'Roboto','Montserrat', sans-serif;
-  line-height: 4.2rem;
+  font-size: 4.3rem;
+  line-height: 8rem;
   letter-spacing: -.03em;
   font-weight: 400;
 }
@@ -128,6 +134,9 @@ body {
   font-family: 'Roboto','Montserrat', sans-serif;
 }
 
+section p {
+  font-size: 1.2rem;
+}
 
 /* 3 aminated down arrows*/
 .scroll-indicator .arrow {

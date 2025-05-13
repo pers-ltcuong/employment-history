@@ -1,0 +1,76 @@
+.education-wrapper {
+  padding: 40px 20px;
+}
+
+.education-tree-section {
+  width: 100%;
+  margin-top: 20px;
+  padding-right: 20px;
+  text-align: right;
+  direction: rtl; /* Enables better right alignment layout */
+}
+
+.tree-node {
+  border-right: 3px solid #FFD700;
+  padding-right: 20px;
+  position: relative;
+  text-align: right;
+}
+
+.tree-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -11px;
+  width: 20px;
+  height: 20px;
+  background: #000000;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.tree-branch {
+  margin-top: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 2px dashed #ffffff;
+  position: relative;
+  text-align: right;
+}
+
+.tree-branch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -9px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.tree-branch p {
+  margin-right: 10px;
+}
+
+/* Sub-branch list for key projects */
+.tree-branch-subbranch {
+  list-style: disc;
+  padding-right: 30px;
+  margin-top: 10px;
+  direction: rtl;
+}
+
+.tree-branch-subbranch li {
+  margin-bottom: 8px;
+  color: #ddd;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.tree-branch-subbranch em {
+  font-style: normal;
+  color: #aaa;
+  font-size: 0.9rem;
+}
