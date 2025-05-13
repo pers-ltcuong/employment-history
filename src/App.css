@@ -78,6 +78,14 @@ html, body {
   padding-right: 5%;
 }
 
+.default-background {
+  color: #000000!important;
+}
+
+.default-background::before {
+  background-color: white!important;
+}
+
 /* Button styling */
 .custom-btn {
   background-color: transparent;
