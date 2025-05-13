@@ -45,7 +45,7 @@ html, body {
 /* Section content */
 .section-content {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   padding: 2rem;
 }
 
@@ -58,7 +58,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.65); /* Black overlay */
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Alignment helpers */
@@ -108,8 +108,12 @@ html, body {
 }
 
 .custom-btn:hover {
-  background-color: #FFD700;
+  background-color: #fff;
   color: #000000;
+}
+
+.custom-btn-white-bg:hover {
+  background-color: #FFD700;
 }
 
 /* Content */
@@ -123,3 +127,65 @@ h2 {
 body {
   font-family: 'Roboto','Montserrat', sans-serif;
 }
+
+
+/* 3 aminated down arrows*/
+.scroll-indicator .arrow {
+  width: 24px;
+  height: 24px;
+  border-left: 2.5px solid #ffffff;
+  border-bottom: 2.5px solid #ffffff;
+  transform: rotate(-45deg);
+  opacity: 0;
+  animation: arrowAnim 2s infinite;
+}
+
+.scroll-indicator .arrow:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-indicator .arrow:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.scroll-indicator .arrow:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes arrowAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px) rotate(-45deg);
+  }
+}
+
+
+
+/* Modal custom style*/
+.btn-close {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover: red and zoom out */
+.btn-close:hover {
+  transform: scale(1.3);
+  filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7470%) hue-rotate(1deg); /* robust red */
+}
+
+/* Active (on click): bright yellow */
+.btn-close:active {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(98%) saturate(427%) hue-rotate(4deg); /* bright yellow */
+}
+
+
+
+
+
