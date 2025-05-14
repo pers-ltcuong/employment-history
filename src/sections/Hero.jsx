@@ -18,7 +18,7 @@ function Hero() {
           className="custom-btn"
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/documents/Cuong Le - Quality Assurance Engineer.pdf"; // File located
+            link.href = `${process.env.PUBLIC_URL}/documents/Cuong Le - Quality Assurance Engineer.pdf`; // File located
             link.download = "Cuong Le resume.pdf"; // File name when user download 
             document.body.appendChild(link);
             link.click();
