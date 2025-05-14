@@ -147,3 +147,18 @@ body.modal-open {
   transition: background-color 0.3s, border 0.3s;
   backdrop-filter: blur(2px);
 }
+
+.project-title-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.project-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}

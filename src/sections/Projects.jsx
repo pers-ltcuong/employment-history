@@ -8,13 +8,14 @@ function Projects() {
   const universityProjects = [
     {
       name: "Home Devices Remote Control",
+      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
       description: [
         "An IoT system allowing remote device control via SIM module (Call/SMS). Developed with embedded C and assembly languages.",
         "I developed a complete IoT system enabling remote control of home appliances using a SIM-based communication module (SIM800L), built entirely with the MSP430 microcontroller and programmed in embedded C. The system allows users to control devices and query their status remotely by sending SMS or making a call to the system. Upon receiving a valid message or call, the system interprets the command and switches the corresponding device ON/OFF or returns its current status.",
         "This project was fully self-built, including both hardware and software components. On the hardware side, I designed the circuit, soldered all components onto a custom PCB, and ensured power safety and module protection. On the software side, I wrote the firmware to manage GSM communication, parse commands, handle timing logic, and control relays accordingly."
       ],
-      company: "",
-      address: "",
+      company: "None - A research project",
+      address: "None",
       product: "IoT system",
       testMethodology: [
         "Concurrent message handling: Tested how the system processes multiple SMS messages sent in a short period of time (spam messages test).",
@@ -24,14 +25,15 @@ function Projects() {
     },
     {
       name: "3D Printing",
+      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
       description: [
         "Designed a custom 3D printer and firmware to produce various objects.",
         "I collaborated with a team to design and build a fully functional custom 3D printer from scratch, integrating both hardware and software components. The system is powered by a Raspberry Pi and programmed in Python to manage the printing process, control the motors, and interface with the firmware.",
         "On the hardware side, we designed the mechanical frame, created custom PCBs for motor control, and assembled all components including extruders, stepper motors, and sensors.",
         "On the software side, I contributed to developing custom firmware using Python on Raspbian to control step motor for 3D printing."
       ],
-      company: "",
-      address: "",
+      company: "None - A research project",
+      address: "None",
       product: "Custom 3D Printer",
       testMethodology: [
         "Accuracy and precision tests: Operate and see accuracy of step motors (xyz)",
@@ -41,13 +43,14 @@ function Projects() {
     },
     {
       name: "Thesis - Smart Straw Machine",
+      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
       description: [
         "Thesis: 'Mô hình sản xuất ống hút sậy tự động sử dụng công nghệ xử lý ảnh trên Raspberry Pi'. Used image processing to automate straw production.",
         "As part of my graduation thesis, I worked with a team to design and implement an automated system for producing eco-friendly reed straws. The system leverages computer vision and robotics to identify, align, cut, and drill reed straws with precision. The project was built on top of our earlier 3D printer framework and was enhanced with image processing capabilities using a camera module and Python.",
         "We used a Raspberry Pi running Raspbian OS as the central controller. The camera captures images of reed straws placed on a conveyor system. Image processing algorithms—developed using OpenCV in Python—detect the position, orientation, and defects of each straw in real time. Based on the analysis, the system performs accurate cutting and drilling actions using motor-controlled tools."
       ],
-      company: "",
-      address: "",
+      company: "None - Thesis",
+      address: "None",
       product: "Automated Straw Production Machine",
       testMethodology: [
         "Straw alignment accuracy: Ensured the vision system could correctly align and detect natural variations in reed shapes.",
@@ -61,22 +64,42 @@ function Projects() {
 
   const workingProjects = [
     {
-      name: "Automation QA Framework",
-      description:
-        "Built a reusable Python and Selenium-based test automation framework integrated with CI/CD pipelines and report generation.",
-      company: "Tech Corp",
-      address: "456 Tech St, City, Country",
-      product: "Test Automation Framework",
-      testMethodology: "Selenium WebDriver automation with CI/CD integration."
+      name: "Accedian Networks",
+      logoUrl: `${process.env.PUBLIC_URL}/images/cisco-logo.png`,
+      company: "TMA Tech Group (Customer: Accedian/Cisco Canada)",
+      address: "Montreal, Quebec, Canada",
+      product: "Networking products (Assurance performance)",
+      description: [
+        "A software-based solution that helps telecom operators, internet service providers, and large enterprises to: Monitor the health of their network, measure service quality (like speed, delay, and loss), and prove they are delivering what they promise to customers",
+        "It runs in the cloud or on servers (no need for expensive test hardware), connects to small devices (called modules) placed around the network, performs live testing and monitoring between these devices - like checking how fast and reliable the connection is.",
+        "The smart traffic controller that constantly watches every route, ensures cars (data) arrive safely and quickly, and lets you know if there are any jams or detours - all without sending people into the field.",
+        "Firmware updates are released frequently to enhance functionality, address emerging issues, and maintain high standards of quality and performance.",
+        "Cisco prioritizes security, with HTTPS-protected WebUI sessions using SSL certificates and enforced Two-Factor Authentication (2FA). The CLI supports SSH key-based access and role-based access control (RBAC), while protections against XSS, CSRF, and other vulnerabilities secure the user interfaces."
+      ],
+      testMethodology: [
+        "Acceptance Testing: By validating the firmware against customer requirements, ensuring it meets all necessary specifications. This phase confirms that the firmware is ready for future testing.",
+        "Sanity Testing: A quick check is performed after each build to ensure that critical features, like the core functionality of the firmware, are working. This ensures that there are no major issues after minor updates or bug fixes.",
+        "Regression Testing: After any code changes or bug fixes, new firmwware is provided, regression testing is carried out to ensure that the updates do not break existing functionality.",
+        "Interface Testing (CLI and Web): Both the Command Line Interface (CLI) and Web interfaces are tested to ensure that users can interact with the firmware easily and that the interfaces work without errors. This includes verifying that the inputs, outputs, and display functionalities are all functioning as expected.",
+        "Functional Testing: Functional testing is carried out to confirm that all the features of the firmware operate as per the requirements. This includes verifying the core functionalities, APIs, and interactions between different components.",
+        "Performance Testing (Non-functional): We conduct performance testing to evaluate the firmware's behavior under various loads, ensuring it performs well under typical usage scenarios and during peak loads. This includes checking for response time, stability, and efficient use of resources.",
+        "Scalability Testing (Non-functional): We assess how the firmware scales under increasing demands, such as a higher number of managed devices, users, etc. This test ensures that the firmware can handle growth without compromising its functionality or performance.",
+        "Automation Testing: Automated test scripts are executed to quickly verify large sets of functionalities, ensure consistency and efficiency in the testing process.",
+        "Manual Testing: Manual testing is conducted to cover cases that require human judgment, such as validating complex logic, hardware plugging, user interface interactions, and edge cases that are difficult to automate"
+      ]
     },
     {
-      name: "Firmware Regression Testing",
-      description:
-        "Led firmware regression testing for embedded systems using custom Python tools and serial console automation.",
-      company: "Tech Corp",
-      address: "456 Tech St, City, Country",
-      product: "Firmware Testing Suite",
-      testMethodology: "Automated regression testing through custom Python scripts."
+      name: "SOLAR",
+      logoUrl: `${process.env.PUBLIC_URL}/images/icon-logo.png`,
+      company: "TMA Tech Group (Customer: ICON Clinical Research)",
+      address: "Chennai, Tamil Nadu, India",
+      product: "A website about health research",
+      description: [
+        
+      ],
+      testMethodology: [
+        
+      ]
     }
   ];
 
@@ -121,8 +144,18 @@ function Projects() {
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h4>{selectedProject.name}</h4>
-            
+            <h4 className="project-title-with-logo">
+              {selectedProject.logoUrl && (
+                <img
+                  src={selectedProject.logoUrl}
+                  alt={`${selectedProject.name} logo`}
+                  className="project-logo"
+                />
+              )}
+              {selectedProject.name}
+            </h4>
+
+
             <div className="modal-text">
               <p><strong>Company:</strong> {selectedProject.company}</p>
               <p><strong>Address:</strong> {selectedProject.address}</p>
