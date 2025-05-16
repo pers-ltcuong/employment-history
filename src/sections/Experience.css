@@ -1,0 +1,214 @@
+#experience-section .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#experience-section .modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh; /* limit modal height to viewport */
+  display: flex;
+  flex-direction: column;
+  animation-name: fadeInScale;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#experience-section .modal-text {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 20px; /* space below content for buttons */
+}
+
+/* Buttons container fixed at bottom inside modal */
+#experience-section .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  background: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+#experience-section .label-badge {
+  display: inline-block;
+  background-color: #ffffff;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  margin-right: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #FFD700;
+}
+
+#experience-section .close-btn {
+  margin-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Footer */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.left-buttons button,
+.right-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.left-buttons button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.left-buttons .custom-btn {
+  color: #000000;
+}
+
+.left-buttons .custom-btn:hover {
+  background-color: #FFD700;
+}
+
+/* Career path styles */
+#experience-section .career-path-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#experience-section .animated-step {
+  opacity: 0;
+  animation: fadeInStep 0.5s forwards;
+}
+
+#experience-section .animated-step:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#experience-section .animated-step:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#experience-section .animated-step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+#experience-section .animated-step:nth-child(4) {
+  animation-delay: 0.8s;
+}
+#experience-section .animated-step:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInStep {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+/* Optional modal-open class to prevent background scroll */
+.modal-open {
+  overflow: hidden;
+}
+
+/* Example animation for modal fadeInScale */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.career-path-chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.career-step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+  flex: 1;
+}
+
+.career-step-time {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 1px;
+  align-self: flex-start; /* Aligns time to the left */
+  text-align: left;
+  width: 100%;
+}
+
+.career-step-btn {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.career-step-btn.completed {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  cursor: default;
+}
+
+.career-step-btn.active {
+  border-color: #2196f3;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+

@@ -94,6 +94,11 @@
   cursor: pointer; /* Shows pointer cursor on hover */
 }
 
+.close-btn:hover {
+  background-color: #c8aa00;
+}
+
+
 /* Styling for Project Header in the Project Box */
 h3.project-header {
   padding-bottom: 10px; /* Adds space below the project header */
