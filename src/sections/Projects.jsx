@@ -43,7 +43,7 @@ function Projects() {
     },
     {
       name: "Thesis - Smart Straw Machine",
-      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
+      logoUrl: `${process.env.PUBLIC_URL}/images/ctu-logo.png`,
       description: [
         "Thesis: 'Mô hình sản xuất ống hút sậy tự động sử dụng công nghệ xử lý ảnh trên Raspberry Pi'. Used image processing to automate straw production.",
         "As part of my graduation thesis, I worked with a team to design and implement an automated system for producing eco-friendly reed straws. The system leverages computer vision and robotics to identify, align, cut, and drill reed straws with precision. The project was built on top of our earlier 3D printer framework and was enhanced with image processing capabilities using a camera module and Python.",
@@ -93,12 +93,21 @@ function Projects() {
       logoUrl: `${process.env.PUBLIC_URL}/images/icon-logo.png`,
       company: "TMA Tech Group (Customer: ICON Clinical Research)",
       address: "Chennai, Tamil Nadu, India",
-      product: "A website about health research",
+      product: "Health Research/Clinical Trials Website",
       description: [
-        
+        "SOLAR (Sponsor On-line Lab Requirements System) is a web application developed by ICON Clinical Research to facilitate the management and submission of clinical trials/health research from researcher to sponsors.",
+        "It plays a key role in ICON's suite of systems used in clinical trials and laboratory services, streamlining the communication between sponsors and ICON's lab operations.",
+        "SOLAR enables researcher to specify study lab requirements, such as tests, kits, visits and shipping logistics.",
+        "It supports exporting eCLW (Electronic Client Laboratory Worksheet) and send to sponsor for review and sign-off, or they can review online using eCSTR feature (Electronic Clinical Studies Technical Review).",
+        "This application integrates with a dedicated microservice ICONLIMS (ICON Laboratory Information Management System) to create, modify, and delete laboratory entities such as tests, kits, and shipments."
       ],
       testMethodology: [
-        
+        "API Testing: Tested RESTful APIs, verifying CRUD operations for lab entities (e.g., tests, kits, shipments). Used tools like Postman to validate request/response integrity, error handling, and performance.",
+        "Functional Testing: Validated that each feature of the application met business requirements. This included form validations, workflow correctness, integration with backend services, and data consistency.",
+        "Sanity Testing: Performed quick health checks after new builds or deployments to ensure core functionalities were stable before proceeding with deeper testing.",
+        "Regression Testing: Conducted thorough testing of existing features to ensure new changes did not introduce bugs. This included maintaining and running regression test suites manually and through automation (Jenkins CI/CD).",
+        "Manual Testing: Executed detailed exploratory tests for complex user flows and UI components that required human validation, or when verifying visual elements.",
+        "Automation Testing: Created automated test scripts using Katalon Studio (with Selenium). Tests were run as part of regular CI workflows to reduce manual effort and accelerate release cycles."
       ]
     }
   ];

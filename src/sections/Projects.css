@@ -106,7 +106,7 @@ body.modal-open {
 
 /* Modal Paragraph Styling */
 .modal-content p {
-  color: #333; /* Dark grey color for the paragraph */
+  color: #000000; /* Dark grey color for the paragraph */
   text-align: left; /* Align text to the left */
   margin-bottom: 10px; /* Adds space between paragraphs */
 }
