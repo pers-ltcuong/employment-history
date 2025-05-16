@@ -18,7 +18,7 @@ function Education() {
       <h2>Education</h2>
       <section className="education-tree-section">
         <div className="tree-node university" data-aos="fade-up">
-          <h3>Can Tho University</h3>
+          <h3>CAN THO UNIVERSITY</h3>
 
           <div className="tree-branch major" data-aos="fade-up" data-aos-delay="200">
             <p><strong>Major:</strong> Electronic and Communication</p>

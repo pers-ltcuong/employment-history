@@ -11,7 +11,7 @@
 }
 
 .tree-node {
-  border-right: 3px solid #FFD700;
+  border-right: 3px solid #ffffff;
   padding-right: 20px;
   position: relative;
   text-align: right;
@@ -24,7 +24,7 @@
   right: -11px;
   width: 20px;
   height: 20px;
-  background: #000000;
+  background: #ffffff;
   border-radius: 50%;
   border: 2px solid #FFD700;
 }
@@ -33,7 +33,7 @@
   margin-top: 20px;
   margin-right: 20px;
   padding-right: 20px;
-  border-right: 2px dashed #ffffff;
+  border-right: 2px solid #ffffff;
   position: relative;
   text-align: right;
 }
@@ -42,7 +42,7 @@
   content: "";
   position: absolute;
   top: 0;
-  right: -9px;
+  right: -8px;
   width: 14px;
   height: 14px;
   background: #ffffff;
@@ -52,6 +52,10 @@
 
 .tree-branch p {
   margin-right: 10px;
+}
+
+.education-tree-section h3 {
+  font-size: 30px;
 }
 
 /* Sub-branch list for key projects */
