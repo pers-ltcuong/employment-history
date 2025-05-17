@@ -22,3 +22,9 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
+span.release-version {
+  color: #ffffff;
+  font-size: 1.0rem;
+  margin-left: 10px;
+}
