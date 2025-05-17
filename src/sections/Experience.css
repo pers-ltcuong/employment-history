@@ -48,7 +48,7 @@
 
 #experience-section .label-badge {
   display: inline-block;
-  background-color: #ffffff;
+  background-color: #fff4c2;
   color: black;
   padding: 3px 8px;
   border-radius: 8px;
@@ -212,3 +212,11 @@
 }
 
 
+.hint-box {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
