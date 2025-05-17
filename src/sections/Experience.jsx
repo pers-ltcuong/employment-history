@@ -51,11 +51,11 @@ const careerSteps = [
   { title: "QA Lead (maternity replacement, now permanent) - Accedian", time: "Oct 2024" },
 ];
 
-
 function Experience() {
   const [selectedButton, setSelectedButton] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
+  const [showWorkHint, setShowWorkHint] = useState(false);
 
   useEffect(() => {
     if (selectedButton === "career") {
@@ -79,6 +79,17 @@ function Experience() {
     }
   }, [selectedButton]);
 
+  const handleWorkClick = () => {
+    setSelectedButton("work");
+    setCurrentPage(0);
+
+    const hasSeenHint = localStorage.getItem("hasSeenWorkHint");
+    if (!hasSeenHint) {
+      setShowWorkHint(true);
+      localStorage.setItem("hasSeenWorkHint", "true");
+    }
+  };
+
   return (
     <div id="experience-section" className="container">
       <h2>Experience</h2>
@@ -90,10 +101,7 @@ function Experience() {
         <button
           className="custom-btn"
           style={{ marginRight: "20px" }}
-          onClick={() => {
-            setSelectedButton("work");
-            setCurrentPage(0);
-          }}
+          onClick={handleWorkClick}
         >
           Work Experience
         </button>
@@ -106,7 +114,13 @@ function Experience() {
       </div>
 
       {selectedButton && (
-        <div className="modal-overlay" onClick={() => setSelectedButton(null)}>
+        <div 
+          className="modal-overlay"
+          onClick={() => {
+            setSelectedButton(null);
+            setShowWorkHint(false); // hide hint too
+          }}
+        >
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
@@ -158,14 +172,49 @@ function Experience() {
                     >
                       Previous
                     </button>
-                    <button
-                      className="custom-btn"
-                      disabled={currentPage === workExperiences.length - 1}
-                      onClick={() => setCurrentPage((prev) => prev + 1)}
-                      style={{ marginLeft: "10px" }}
-                    >
-                      Next
-                    </button>
+                    <div style={{ position: "relative", display: "inline-block" }}>
+                      <button
+                        className="custom-btn"
+                        disabled={currentPage === workExperiences.length - 1}
+                        onClick={() => setCurrentPage((prev) => prev + 1)}
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Next
+                      </button>
+                      {showWorkHint && (
+                        <div
+                          className="hint-box"
+                          style={{
+                            position: "absolute",
+                            top: "-40px",
+                            left: "40px",
+                            backgroundColor: "#fff4c2",
+                            border: "1px solid #ffd700",
+                            borderRadius: "8px",
+                            padding: "3px 8px",
+                            fontSize: "0.9em",
+                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                            zIndex: 10,
+                            whiteSpace: "nowrap",
+                            color: "#000000"
+                          }}
+                        >
+                          💡 Click "Next" to view other projects.
+                          <button
+                            style={{
+                              background: "transparent",
+                              border: "none",
+                              fontWeight: "bold",
+                              cursor: "pointer",
+                              color: "#aa0000",
+                            }}
+                            onClick={() => setShowWorkHint(false)}
+                          >
+                            ✖
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="right-buttons">
                     <button
@@ -197,7 +246,6 @@ function Experience() {
                     </div>
                   ))}
                 </div>
-
 
                 <div className="modal-buttons">
                   <button
