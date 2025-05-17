@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Section.css";
 import "./Projects.css";
+import "../components/Modal.css"
+import Modal from '../components/Modal';
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -151,9 +153,10 @@ function Projects() {
       </div>
 
       {selectedProject && (
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h4 className="project-title-with-logo">
+        <Modal
+          onClose={() => setSelectedProject(null)}
+          header={
+            <>
               {selectedProject.logoUrl && (
                 <img
                   src={selectedProject.logoUrl}
@@ -162,44 +165,47 @@ function Projects() {
                 />
               )}
               {selectedProject.name}
-            </h4>
-
-
-            <div className="modal-text">
-              <p><strong>Company:</strong> {selectedProject.company}</p>
-              <p><strong>Address:</strong> {selectedProject.address}</p>
-              <p><strong>Product:</strong> {selectedProject.product}</p>
-              <p><strong>Description:</strong></p>
-              <ul className="description-list">
-                {selectedProject.description.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-              <p><strong>Test methodology:</strong></p>
-              <ul className="test-methodology-list">
-                {selectedProject.testMethodology.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Conditionally render the "Watch Video" button */}
-            {selectedProject.videoUrl && (
-              <a 
+            </>
+          }
+          footer={
+            selectedProject.videoUrl ? (
+              <>
+                <div className="right-buttons">
+                    <button
+                      className="close-btn"
+                      onClick={() => setSelectedProject(null)}
+                    >
+                      Close
+                    </button>
+                </div>
+                <a
                 href={selectedProject.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="custom-btn-white-bg btn-project-custom"
+                style={{textDecoration: "none", marginLeft: "10px"}}
               >
-                Watch Demo Video
+                📹 Watch Demo Video
               </a>
-            )}
-
-            <button className="close-btn" onClick={() => setSelectedProject(null)}>
-              Close
-            </button>
-          </div>
-        </div>
+              </>
+            ) : (null)
+          }
+        >
+          <p><strong>Company:</strong> {selectedProject.company}</p>
+          <p><strong>Address:</strong> {selectedProject.address}</p>
+          <p><strong>Product:</strong> {selectedProject.product}</p>
+          <p><strong>Description:</strong></p>
+          <ul className="description-list">
+            {selectedProject.description.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+          <p><strong>Test methodology:</strong></p>
+          <ul className="test-methodology-list">
+            {selectedProject.testMethodology.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+        </Modal>
       )}
     </div>
   );
