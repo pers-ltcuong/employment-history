@@ -1,0 +1,111 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow-y: auto; /* Allow vertical scroll on overlay if modal content is tall */
+  padding: 20px; /* some padding so modal isn’t flush with window edges */
+  box-sizing: border-box;
+}
+
+/* Modal title */
+.modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column; /* vertical stacking */
+  overflow: hidden; /* clip overflow */
+  box-sizing: border-box;
+  animation-name: fadeInScale;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.modal-scrollable-content {
+  padding: 10px 30px;
+  overflow-y: auto; /* scroll here */
+  flex-grow: 1;      /* take available space */
+  box-sizing: border-box;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  background: #ffffff;
+  flex-shrink: 0; /* don't shrink footer */
+  flex-direction: row-reverse;
+}
+
+/* Close Button Styling */
+.close-btn {
+  padding: 8px 16px;
+  background: #ffd700;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: center; /* center the button horizontally */
+}
+
+.close-btn:hover {
+  background-color: #c8aa00;
+}
+
+/* Disable Body Scrolling When Modal Is Open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal Paragraph Styling */
+.modal-content p {
+  color: #000000;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Modal Title */
+.modal-content h4 {
+  margin-bottom: 12px;
+  color: #000;
+  text-align: center;
+}
+
+.modal-content p,
+.modal-content li {
+  font-size: 1.05rem;
+  color: #000000;
+}
+
+.modal-text {
+  text-align: left;
+  margin-top: 10px;
+  color: #000;
+}

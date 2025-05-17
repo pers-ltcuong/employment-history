@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Section.css";
 import "./Experience.css";
+import "../components/Modal.css"
+import Modal from '../components/Modal';
 
 const workExperiences = [
   {
@@ -114,140 +116,16 @@ function Experience() {
       </div>
 
       {selectedButton && (
-        <div 
-          className="modal-overlay"
-          onClick={() => {
+        <Modal
+          onClose={() => {
             setSelectedButton(null);
             setShowWorkHint(false); // hide hint too
           }}
-        >
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {selectedButton === "work" ? (
+          header={selectedButton === "work" ? "Work Experience" : "Career Path & Promotion"}
+          footer={
+            selectedButton === "work" ? (
               <>
-                <h4 className="project-title-with-logo">Work Experience</h4>
-                <div className="modal-text">
-                  <p>
-                    <strong>Project:</strong> {workExperiences[currentPage].project}
-                  </p>
-                  <p>
-                    <strong>Domain:</strong> {workExperiences[currentPage].domain}
-                  </p>
-                  <p>
-                    <strong>Role:</strong> {workExperiences[currentPage].role}
-                  </p>
-                  <p>
-                    <strong>Releases involved in:</strong> {workExperiences[currentPage].released}
-                  </p>
-                  <p>
-                    <strong>Experiences:</strong>
-                  </p>
-                  <ul className="description-list">
-                    {workExperiences[currentPage].experiences.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-
-                  {/* Labels */}
-                  {workExperiences[currentPage].labels && (
-                    <div style={{ marginTop: "15px", marginBottom: "15px" }}>
-                      <strong>Labels: </strong>
-                      {workExperiences[currentPage].labels.map((label, idx) => (
-                        <span key={idx} className="label-badge">
-                          {label}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="modal-footer">
-                  <div className="left-buttons">
-                    <button
-                      className="custom-btn"
-                      disabled={currentPage === 0}
-                      onClick={() => setCurrentPage((prev) => prev - 1)}
-                    >
-                      Previous
-                    </button>
-                    <div style={{ position: "relative", display: "inline-block" }}>
-                      <button
-                        className="custom-btn"
-                        disabled={currentPage === workExperiences.length - 1}
-                        onClick={() => setCurrentPage((prev) => prev + 1)}
-                        style={{ marginLeft: "10px" }}
-                      >
-                        Next
-                      </button>
-                      {showWorkHint && (
-                        <div
-                          className="hint-box"
-                          style={{
-                            position: "absolute",
-                            top: "-40px",
-                            left: "40px",
-                            backgroundColor: "#fff4c2",
-                            border: "1px solid #ffd700",
-                            borderRadius: "8px",
-                            padding: "3px 8px",
-                            fontSize: "0.9em",
-                            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                            zIndex: 10,
-                            whiteSpace: "nowrap",
-                            color: "#000000"
-                          }}
-                        >
-                          💡 Click "Next" to view other projects.
-                          <button
-                            style={{
-                              background: "transparent",
-                              border: "none",
-                              fontWeight: "bold",
-                              cursor: "pointer",
-                              color: "#aa0000",
-                            }}
-                            onClick={() => setShowWorkHint(false)}
-                          >
-                            ✖
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="right-buttons">
-                    <button
-                      className="close-btn"
-                      onClick={() => setSelectedButton(null)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <h4 className="project-title-with-logo">
-                  Career Path & Promotion
-                </h4>
-                <div className="career-path-chart">
-                  {careerSteps.map((step, idx) => (
-                    <div key={idx} className="career-step-container">
-                      <div className="career-step-time">{step.time}</div>
-                      <button
-                        className={`career-step-btn ${
-                          idx === currentStep ? "active" : idx < currentStep ? "completed" : ""
-                        }`}
-                        disabled={idx > currentStep}
-                      >
-                        {step.title}
-                      </button>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="modal-buttons">
+                <div className="right-buttons">
                   <button
                     className="close-btn"
                     onClick={() => setSelectedButton(null)}
@@ -255,11 +133,107 @@ function Experience() {
                     Close
                   </button>
                 </div>
+                <div className="left-buttons">
+                  <button
+                    className="custom-btn"
+                    disabled={currentPage === 0}
+                    onClick={() => setCurrentPage((prev) => prev - 1)}
+                  >
+                    Previous
+                  </button>
+
+                  <div style={{ position: "relative", display: "inline-block" }}>
+                    <button
+                      className="custom-btn"
+                      disabled={currentPage === workExperiences.length - 1}
+                      onClick={() => setCurrentPage((prev) => prev + 1)}
+                      style={{ marginLeft: "10px" }}
+                    >
+                      Next
+                    </button>
+                    
+
+                    {showWorkHint && (
+                      <div
+                        className="hint-box"
+                        style={{
+                          position: "absolute",
+                          top: "-40px",
+                          left: "40px",
+                          backgroundColor: "#fff4c2",
+                          border: "1px solid #ffd700",
+                          borderRadius: "8px",
+                          padding: "3px 8px",
+                          fontSize: "0.9em",
+                          boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                          zIndex: 10,
+                          whiteSpace: "nowrap",
+                          color: "#000000",
+                        }}
+                      >
+                        💡 Click "Next" to view other projects.
+                        <button
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            fontWeight: "bold",
+                            cursor: "pointer",
+                            color: "#aa0000",
+                          }}
+                          onClick={() => setShowWorkHint(false)}
+                        >
+                          ✖
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </>
-            )}
-          </div>
-        </div>
+            ) : (null)
+          }
+        >
+          {selectedButton === "work" ? (
+            <>
+              <p><strong>Project:</strong> {workExperiences[currentPage].project}</p>
+              <p><strong>Domain:</strong> {workExperiences[currentPage].domain}</p>
+              <p><strong>Role:</strong> {workExperiences[currentPage].role}</p>
+              <p><strong>Releases involved in:</strong> {workExperiences[currentPage].released}</p>
+              <p><strong>Experiences:</strong></p>
+              <ul className="exeperience-list">
+                {workExperiences[currentPage].experiences.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+
+              {workExperiences[currentPage].labels && (
+                <div style={{ marginTop: "15px", marginBottom: "15px", textAlign: "left" }}>
+                  <strong>Labels: </strong>
+                  {workExperiences[currentPage].labels.map((label, idx) => (
+                    <span key={idx} className="label-badge">{label}</span>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="career-path-chart">
+              {careerSteps.map((step, idx) => (
+                <div key={idx} className="career-step-container">
+                  <div className="career-step-time">{step.time}</div>
+                  <button
+                    className={`career-step-btn ${
+                      idx === currentStep ? "active" : idx < currentStep ? "completed" : ""
+                    }`}
+                    disabled={idx > currentStep}
+                  >
+                    {step.title}
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </Modal>
       )}
+
     </div>
   );
 }
