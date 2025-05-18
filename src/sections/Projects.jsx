@@ -10,7 +10,7 @@ function Projects() {
   const universityProjects = [
     {
       name: "Home Devices Remote Control",
-      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
+      logoUrl: `${process.env.PUBLIC_URL}/images/ctu-logo.png`,
       description: [
         "An IoT system allowing remote device control via SIM module (Call/SMS). Developed with embedded C and assembly languages.",
         "I developed a complete IoT system enabling remote control of home appliances using a SIM-based communication module (SIM800L), built entirely with the MSP430 microcontroller and programmed in embedded C. The system allows users to control devices and query their status remotely by sending SMS or making a call to the system. Upon receiving a valid message or call, the system interprets the command and switches the corresponding device ON/OFF or returns its current status.",
@@ -27,7 +27,7 @@ function Projects() {
     },
     {
       name: "3D Printing",
-      logoUrl: `${process.env.PUBLIC_URL}/images/CTU-logo.png`,
+      logoUrl: `${process.env.PUBLIC_URL}/images/ctu-logo.png`,
       description: [
         "Designed a custom 3D printer and firmware to produce various objects.",
         "I collaborated with a team to design and build a fully functional custom 3D printer from scratch, integrating both hardware and software components. The system is powered by a Raspberry Pi and programmed in Python to manage the printing process, control the motors, and interface with the firmware.",
