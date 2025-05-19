@@ -1,21 +1,10 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 
 const ProfileModal = () => {
   let avatarImg = `${process.env.PUBLIC_URL}/images/avatar.jpg`;
-
-  return (
+  const modalContent =  (
     <>
-      {/* Button trigger */}
-      <div id="profile-modal">
-        <button
-          className="custom-btn-white-bg"
-          data-bs-toggle="modal"
-          data-bs-target="#profileModal"
-        >
-          Show Profile
-        </button>
-      </div>
-
       {/* Modal */}
       <div
         className="modal fade"
@@ -63,6 +52,9 @@ const ProfileModal = () => {
       </div>
     </>
   );
+
+  return ReactDOM.createPortal(modalContent, document.getElementById('modal-root'));
+
 };
 
 export default ProfileModal;

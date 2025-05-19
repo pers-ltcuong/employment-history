@@ -54,7 +54,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <ProfileModal hidden/> {/* Modal trigger button */}
 
       {/* Background Layers */}
       <div className="background-container">
