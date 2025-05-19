@@ -13,6 +13,16 @@ function Hero() {
 
       {/* Flex container for buttons */}
       <div className="d-flex justify-content-center gap-3">
+        {/* Button trigger */}
+        <div id="profile-modal">
+          <button
+            className="custom-btn-white-bg"
+            data-bs-toggle="modal"
+            data-bs-target="#profileModal"
+          >
+            Show Profile
+          </button>
+        </div>
         <ProfileModal /> {/* Modal trigger button */}
         <button
           className="custom-btn"
