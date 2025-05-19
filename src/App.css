@@ -72,14 +72,14 @@ html, body {
   justify-content: flex-start;
   text-align: left!important;
   padding-left: 5%;
-  padding-right: 50%;
+  padding-right: 40%;
 }
 
 .section-right {
   justify-content: flex-end;
   text-align: right!important;
   padding-right: 5%;
-  padding-left: 50%;
+  padding-left: 40%;
 }
 
 .default-background {
