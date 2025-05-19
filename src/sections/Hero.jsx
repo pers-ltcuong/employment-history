@@ -7,8 +7,8 @@ function Hero() {
     <div className="container text-center hero-section">
       <h1>Hi, I'm Cuong Le</h1>
       <p>
-        A passionate QA Engineer who specializes in test automation, manual testing, and ensuring every release meets the highest standards of quality. 
-        I take pride in delivering detailed bug reports, creating reliable test scripts, and working closely with development teams to build stable, user-friendly applications.
+        A passionate QA Engineer specializing in test automation and manual testing. 
+        I ensure every release meets high standards of quality and usability.
       </p>
 
       {/* Flex container for buttons */}
