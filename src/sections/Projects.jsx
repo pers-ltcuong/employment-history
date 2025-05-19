@@ -125,6 +125,7 @@ function Projects() {
   return (
     <div className="container projects-section">
       <h2>Projects</h2>
+      <p style={{paddingRight: "35%"}}>Worked on academic and professional projects. Hands-on experience with projects in IoT, smart systems, networking, and health research platforms. Check it out!</p>
       <div className="project-boxes">
         <div className="project-box">
           <h3 className="project-header">University Projects</h3>
