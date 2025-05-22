@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import "./Navbar.css";
 
 function Navbar() {
-  let releaseVersion = "v1.1";
+  let releaseVersion = "v1.2";
   let releaseNote = `https://github.com/pers-ltcuong/employment-history/releases/tag/release_${releaseVersion}`;
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
