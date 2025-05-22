@@ -8,7 +8,12 @@ const workExperiences = [
   {
     project: "Accedian Networks",
     domain: "Firmware",
-    role: "Software Quality Assurance",
+    role: [
+      "Software Quality Assurance.",
+      "Mentoring junior QA and onboarding new team members.",
+      "Leading test planning, estimation, and risk assessment.",
+      "Managing QA processes to ensure on-time delivery.",
+    ],
     released: "11 (~100 network and security features)",
     experiences: [
       "Reported progress biweekly to the QA Manager in Canada, ensuring clear communication of team status.",
@@ -21,14 +26,18 @@ const workExperiences = [
       "Worked closely with the software team to investigate root causes of customer-reported issues.",
       "Managed deployment of virtual machines and internal products using KVM and VMware.",
       "Utilized Docker to deploy essential services effectively.",
+      "Supported team members by delivering training and troubleshooting technical challenges."
     ],
-    labels: ["Waterfall", "Self-learning", "Root cause analysis", "Automation", "Manual", "Python", "Docker", "Jenkins CI/CD", "Test plan", "Test strategy", "Task management", "Handle multiple tasks/projects", "etc. (QA skills)"],
+    labels: ["Waterfall", "Self-learning", "Root cause analysis", "Problem solving", "Automation", "Manual", "Python", "Linux shell", "Docker", "Jenkins CI/CD", "Github & Bitbucket", "Test plan", "Test strategy", "Task management", "Handle multiple tasks/projects", "Networking product", "etc. (QA skills)"],
   },
   {
     project: "SOLAR",
     domain: "Website",
-    role: "Software Quality Assurance",
-    released: "18 (~150 UI features/request changes)",
+    role: [
+      "Software Quality Assurance",
+      "Test planning, estimation"
+    ],
+    released: "18 (~150 features/request changes)",
     experiences: [
       "Designed and implemented a custom test automation framework using Katalon Studio integrated with Selenium.",
       "Created reusable components and objects to enable scalable and maintainable testing solutions.",
@@ -39,7 +48,7 @@ const workExperiences = [
       "Reported bugs, validated fixes, and monitored to prevent bug recurrence.",
       "Collaborated closely with developers to reproduce and resolve customer-reported issues efficiently.",
     ],
-    labels: ["Agile", "Katalon", "Selenium", "Java", "Automation", "Manual", "API testing", "UI testing", "Microservices", "Jenkins CI/CD", "Test plan", "Test strategy", "Handle multiple tasks/projects", "etc. (QA skills)"],
+    labels: ["Agile", "Katalon", "Selenium", "Java", "Automation", "Manual", "API testing", "UI testing", "Microservices", "Jenkins CI/CD", "SVN/Bitbucket", "Test plan", "Test strategy", "Handle multiple tasks/projects", "BDD Cucumber/Gherkin (research and sharing)", "JUnit (research and sharing)", "etc. (QA skills)"],
   },
 ];
 
@@ -196,9 +205,14 @@ function Experience() {
             <>
               <p><strong>Project:</strong> {workExperiences[currentPage].project}</p>
               <p><strong>Domain:</strong> {workExperiences[currentPage].domain}</p>
-              <p><strong>Role:</strong> {workExperiences[currentPage].role}</p>
               <p><strong>Releases involved in:</strong> {workExperiences[currentPage].released}</p>
-              <p><strong>Experiences:</strong></p>
+              <p><strong>Role:</strong></p>
+              <ul className="role-list">
+                {workExperiences[currentPage].role.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+              <p><strong>Key Responsibilities & Experiences:</strong></p>
               <ul className="exeperience-list">
                 {workExperiences[currentPage].experiences.map((item, idx) => (
                   <li key={idx}>{item}</li>

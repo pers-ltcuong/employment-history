@@ -17,7 +17,6 @@ function Projects() {
         "This project was fully self-built, including both hardware and software components. On the hardware side, I designed the circuit, soldered all components onto a custom PCB, and ensured power safety and module protection. On the software side, I wrote the firmware to manage GSM communication, parse commands, handle timing logic, and control relays accordingly."
       ],
       company: "None - A research project",
-      address: "None",
       product: "IoT system",
       testMethodology: [
         "Concurrent message handling: Tested how the system processes multiple SMS messages sent in a short period of time (spam messages test).",
@@ -35,7 +34,6 @@ function Projects() {
         "On the software side, I contributed to developing custom firmware using Python on Raspbian to control step motor for 3D printing."
       ],
       company: "None - A research project",
-      address: "None",
       product: "Custom 3D Printer",
       testMethodology: [
         "Accuracy and precision tests: Operate and see accuracy of step motors (xyz)",
@@ -52,7 +50,6 @@ function Projects() {
         "We used a Raspberry Pi running Raspbian OS as the central controller. The camera captures images of reed straws placed on a conveyor system. Image processing algorithms—developed using OpenCV in Python—detect the position, orientation, and defects of each straw in real time. Based on the analysis, the system performs accurate cutting and drilling actions using motor-controlled tools."
       ],
       company: "None - Thesis",
-      address: "None",
       product: "Automated Straw Production Machine",
       testMethodology: [
         "Straw alignment accuracy: Ensured the vision system could correctly align and detect natural variations in reed shapes.",
@@ -71,6 +68,9 @@ function Projects() {
       company: "TMA Tech Group (Customer: Accedian/Cisco Canada)",
       address: "Montreal, Quebec, Canada",
       product: "Networking products (Assurance performance)",
+      teamsize: "7 DEV - 3 SQA",
+      testingRate: "95% vs 5% (~8000 unique automation test cases)",
+      automationFw: "A custom-built framework for the project using raw Python libraries, without relying on any existing frameworks.",
       description: [
         "A software-based solution that helps telecom operators, internet service providers, and large enterprises to: Monitor the health of their network, measure service quality (like speed, delay, and loss), and prove they are delivering what they promise to customers",
         "It runs in the cloud or on servers (no need for expensive test hardware), connects to small devices (called modules) placed around the network, performs live testing and monitoring between these devices - like checking how fast and reliable the connection is.",
@@ -96,6 +96,9 @@ function Projects() {
       company: "TMA Tech Group (Customer: ICON Clinical Research)",
       address: "Chennai, Tamil Nadu, India",
       product: "Health Research/Clinical Trials Website",
+      teamsize: "25 DEV - 21 SQA",
+      testingRate: "50% vs 50% (~1000 unique automation test cases)",
+      automationFw: "A custom-built test automation framework based on Katalon and Selenium.",
       description: [
         "SOLAR (Sponsor On-line Lab Requirements System) is a web application developed by ICON Clinical Research to facilitate the management and submission of clinical trials/health research from researcher to sponsors.",
         "It plays a key role in ICON's suite of systems used in clinical trials and laboratory services, streamlining the communication between sponsors and ICON's lab operations.",
@@ -192,8 +195,11 @@ function Projects() {
           }
         >
           <p><strong>Company:</strong> {selectedProject.company}</p>
-          <p><strong>Address:</strong> {selectedProject.address}</p>
+          {selectedProject.address && (<p><strong>Address:</strong> {selectedProject.address}</p>)}
           <p><strong>Product:</strong> {selectedProject.product}</p>
+          {selectedProject.teamsize && (<p><strong>Team size: </strong> {selectedProject.teamsize}</p>)}
+          {selectedProject.testingRate && (<p><strong>Automation/Manual ratio: </strong> {selectedProject.testingRate}</p>)}
+          {selectedProject.automationFw && (<p><strong>Automation framework: </strong> {selectedProject.automationFw}</p>)}
           <p><strong>Description:</strong></p>
           <ul className="description-list">
             {selectedProject.description.map((line, i) => (
