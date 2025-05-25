@@ -36,13 +36,13 @@ function Education() {
             <p><strong>Key Projects (Details in next section)</strong></p>
             <ul className="tree-branch-subbranch">
               <li data-aos="fade-up" data-aos-delay="600">
-                IoT project - Remote control via SIM (Call/SMS) <em>(C/C++ and Assembly - Grade B)</em>
+                IoT project - Remote control via SIM (Call/SMS) <em>(C and Assembly)</em>
               </li>
               <li data-aos="fade-up" data-aos-delay="700">
-                3D Printing System <em>(Python - Grade B+)</em>
+                3D Printing System <em>(Python)</em>
               </li>
               <li data-aos="fade-up" data-aos-delay="800">
-                Thesis: Automated straw production with image processing <em>(Python - Grade A)</em>
+                Thesis: Automated straw production with image processing <em>(Python)</em>
               </li>
             </ul>
           </div>
