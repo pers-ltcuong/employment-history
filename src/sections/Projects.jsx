@@ -68,8 +68,8 @@ function Projects() {
       company: "TMA Tech Group (Customer: Accedian/Cisco Canada)",
       address: "Montreal, Quebec, Canada",
       product: "Networking products (Assurance performance)",
-      teamsize: "7 DEV - 3 SQA",
-      testingRate: "95% vs 5% (~8000 unique automation test cases)",
+      teamsize: "25 DEV - 21 SQA",
+      testingRate: "98% vs 2% (~8000 unique automation test cases which executed on 4 platforms)",
       automationFw: "A custom-built framework for the project using raw Python libraries, without relying on any existing frameworks.",
       description: [
         "A software-based solution that helps telecom operators, internet service providers, and large enterprises to: Monitor the health of their network, measure service quality (like speed, delay, and loss), and prove they are delivering what they promise to customers",
@@ -96,7 +96,7 @@ function Projects() {
       company: "TMA Tech Group (Customer: ICON Clinical Research)",
       address: "Chennai, Tamil Nadu, India",
       product: "Health Research/Clinical Trials Website",
-      teamsize: "25 DEV - 21 SQA",
+      teamsize: "7 DEV - 3 SQA",
       testingRate: "50% vs 50% (~1000 unique automation test cases)",
       automationFw: "A custom-built test automation framework based on Katalon and Selenium.",
       description: [
